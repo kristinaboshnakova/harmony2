@@ -1,0 +1,785 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Moonrocks&display=swap');
+@import url(https://use.fontawesome.com/releases/v5.15.4/css/all.css);
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Rubik+Moonrocks&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe:ital@0;1&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Rubik+Moonrocks&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0e7df;
+}
+ 
+/* Контейнер за навигацията */
+.nav-menu {
+    display: flex; /* Активиране на Flexbox */
+    justify-content: center; /* Центриране на всички елементи */
+    align-items: center; /* Вертикално подравняване */
+    padding: 10px 20px;
+    background-color: #f0e7df;
+    color: #3c2a21;
+    gap: 20px; /* Разстояние между секциите */
+    
+} 
+
+/* Ляво меню */
+.nav-menu-left ul, .nav-menu-right ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+    display: flex;
+    gap: 50px; /* Разстояние между елементите в менютата */
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
+.nav-menu-left li, .nav-menu-right li {
+    cursor: pointer;
+}
+
+/* Лого */
+.nav-menu-logo {
+    text-align: center; /* Центриране */
+    padding: 0 10px; /* Минимално разстояние от другите елементи */
+}
+
+.nav-menu-logo img {
+    max-height: 100px; /* Височина на логото */
+    object-fit: contain; /* Пропорционално мащабиране */
+    width: auto; /* Логото запазва пропорциите си */
+}
+
+/* Дясно меню */
+.nav-menu-right {
+    display: flex;
+}
+
+/* Бутон */
+.button {
+    display: flex;
+    margin-left: 10px; /* Разстояние между бутона и останалите секции */
+}
+
+.button a {
+    text-decoration: none;
+    background-color: transparent;
+    color: #3c2a21;
+    padding: 10px 20px;
+    border-radius: 9999px;
+    border: 1px solid #3c2a21;
+    transition: background-color 0.3s ease;
+    font-family: sans-serif;;
+    letter-spacing: 2px;
+}
+
+.button a:hover {
+    color: #e8ac21;
+    background-color: #3c2a21;
+}
+
+.nav-menu a {
+    text-decoration: none; /* Премахване на подчертаването */
+    color: inherit; /* Цветът на текста ще наследява текущия цвят */
+    transition: color 0.3s ease; /* Ефект при задържане */
+}
+
+.nav-menu a:hover {
+    color: #e8ac21; /* Промяна на цвета при ховър */
+}
+
+
+
+ /*REAL MEDIA*/
+
+
+
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column; 
+        gap: 10px; 
+    }
+
+    .nav-menu-left ul, .nav-menu-right ul {
+        flex-direction: column; 
+        align-items: center; 
+        gap: 5px;
+    }
+
+    .nav-menu-logo img {
+        max-height: 80px; 
+    }
+
+    .button {
+        justify-content: center; 
+        margin: 0; 
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        padding: 10px; /* Намаляване на padding за по-малък екран */
+    }
+
+    .nav-menu-logo img {
+        max-height: 60px; /* Допълнително намаляване на логото */
+    }
+
+    .button a {
+        padding: 8px 16px; /* По-малък бутон */
+        font-size: 14px; /* Намаляване на размера на текста */
+    }
+}
+
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: #3c2a21;
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.image-text-section {
+    display: flex;
+    justify-content: space-between; /* Разстояние между елементите */
+    align-items: center;
+    gap: 20px; /* Разстояние между снимки и текст */
+    padding: 20px;
+   
+   
+   
+    /* background: radial-gradient(ellipse at 20% 30%, 
+    rgba(60, 42, 33, 0.3) 0%, 
+    transparent 50%), 
+    radial-gradient(ellipse at 80% 70%, 
+    rgba(60, 42, 33, 0.2) 0%, 
+    transparent 40%), /* Второ петно 
+    radial-gradient(ellipse at 50% 50%, 
+    rgba(60, 42, 33, 0.1) 0%, 
+    transparent 60%), /* Трето петно 
+    #f0e7df; /* Основен цвят на фона */
+
+
+}
+
+.more-about{
+    font-size: 20px;
+    font-family: "Merriweather", serif;
+    margin-top:1px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+
+/* Стилове за снимките */
+.image-container {
+    flex: 1; /* Снимките заемат равни части от пространството */
+    max-width: 45%; /* Ограничение на ширината */
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Запазване на пропорциите на изображението */
+}
+
+/* Различна форма за лявата снимка */
+.image-container.left img {
+    height: 300px;
+    clip-path: polygon(
+        0% 0%, /* Горен ляв ъгъл */
+        90% 0%, /* Горен десен ъгъл */
+        80% 20%, /* Зиг-заг */
+        90% 40%, 
+        80% 60%, 
+        90% 80%, 
+        90% 100%, /* Долен десен ъгъл */
+        0% 100% /* Долен ляв ъгъл */
+    );
+}
+
+.image-container.right img {
+    height: 300px;
+    clip-path: polygon(
+        10% 0%, /* Горен ляв ъгъл */
+        100% 0%, /* Горен десен ъгъл */
+        100% 100%, /* Долен десен ъгъл */
+        10% 100%, /* Долен ляв ъгъл */
+        20% 80%, /* Зиг-заг */
+        10% 60%, 
+        20% 40%, 
+        10% 20% 
+    );
+}
+
+/* Стил за текста */
+.text-container {
+    flex: 1; /* Текста заема равна част от пространството */
+    text-align: center;
+    color: #3c2a21;
+    font-family: "Rubik Moonrocks", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.intro-button{
+        background-color: #e8ac21;
+        font-size: 15px;
+        border-radius: 9999px;
+        border: 1px solid #e8ac21;
+        padding-left: 35px;
+        padding-right: 35px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+.intro-button a{
+    text-decoration: none;
+    background-color: #e8ac21; 
+    color: #3c2a21;
+    font-family:sans-serif;
+    letter-spacing: 1px;
+ 
+
+}
+/*.intro-button a:hover {
+    color: #e8ac21;
+}*/
+
+/* Отзивчив дизайн */
+@media (max-width: 768px) {
+    .image-text-section {
+        flex-direction: column; /* Подреждане едно под друго */
+    }
+
+    .image-container {
+        max-width: 100%; /* Снимките да заемат цялата ширина */
+    }
+
+    .text-container {
+        margin: 20px 0; /* Разстояние между текст и снимки */
+    }
+}
+
+@media (max-width: 480px) {
+    .image-text-section {
+        flex-direction: column; /* Подреждане едно под друго */
+    }
+
+    .image-container {
+        max-width: 90%; /* Снимките са малко по-тесни за компактност */
+    }
+}
+
+.leaf{
+    position: absolute;
+    top: 170px;
+    right: 80px;
+    font-size: 3rem; /* Размер на иконката */
+    color: #e8ac21; /* Оранжев цвят */
+    transform: rotate(-20deg); /* Наклоняване */
+}
+
+.leaf2{
+    position: absolute;
+    top: 120px;
+    left: 80px;
+    font-size: 3rem; /* Размер на иконката */
+    color: #e8ac21; /* Оранжев цвят */
+    transform: rotate(-20deg); /* Наклоняване */
+}
+
+@media (max-width: 768px) {
+    .leaf, .leaf2 {
+        font-size: 2rem; /* Намаляване на листата на по-малки екрани */
+    }
+
+}
+
+.title-accommodation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 400px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    color: #3c2a21;
+    font-family: "Rubik Moonrocks", sans-serif;
+    font-size: 2.5rem;
+    margin: 15px;
+    border-radius: 10px;
+    padding: 30px;
+
+}
+
+.cappacity{
+    font-size: 20px;
+    font-family: "Merriweather", serif;
+    margin-top:1px;
+    text-align: center;
+    letter-spacing: 15px;
+    margin-top:1px;
+    text-align: center;
+    letter-spacing: 1px;
+    
+}
+
+.leaf3{
+    position: absolute;
+    top: 715px;
+    left: 370px;
+    font-size: 3rem; /* Размер на иконката */
+    color: #e8ac21; /* Оранжев цвят */
+    transform: rotate(20deg); /* Наклоняване */
+}
+
+
+/* Отзивчив дизайн */
+@media (max-width: 768px) {
+    .title-accommodation {
+        font-size: 2rem;
+        padding: 20px; /* По-компактно разстояние */
+    }
+
+   /* .cappacity {
+        font-size: 0.9rem;
+    } /* Намаляване на текста */
+    
+
+    .leaf3 {
+        top: -10px;
+        right: 15px; /* Промяна на позицията на листото */
+        font-size: 2.5rem; /* Намаляване на размера на иконката */
+    }
+}
+
+@media (max-width: 480px) {
+    .title-accommodation {
+        padding: 10px; /* Намаляване на вътрешния отстъп */
+
+    }
+
+
+    .leaf3 {
+        top: 0;
+        right: 10px; /* Регулиране на позицията за малки екрани */
+        font-size: 2rem; /* Още по-малка иконка */
+    }
+}
+
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    
+    align-items: center;
+    
+}
+
+.photo-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+    max-width: 480px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #ffff;
+    align-items: center;
+    width: 300px;
+}
+
+.photo {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.photo img.default {
+    opacity: 1;
+}
+
+.photo img.hover {
+    opacity: 0;
+}
+
+.photo:hover img.default {
+    opacity: 0;
+}
+
+.photo:hover img.hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+
+.text1 h3{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+    letter-spacing: 17px;
+}
+.text1{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+   font-size: 25px;
+}
+
+.text3 h3{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+    letter-spacing: 17px;
+}
+
+.text3{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+   font-size: 25px;
+}
+
+.text2 h3{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+    letter-spacing: 17px;
+}
+.text2{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+   font-size: 25px;
+}
+.text4 h3{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+    letter-spacing: 17px;
+}
+.text4{
+    color: #3c2a21;
+    font-family: "Alumni Sans Pinstripe", serif;
+   font-size: 25px;
+}
+
+
+
+.container-extras {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #324a36;
+    border-radius: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+/* Петна с произволни форми */
+.spot {
+    position: absolute;
+    background-color: #29452f;
+    border-radius: 50%;
+    opacity: 0.5;
+}
+
+.spot:nth-child(1) {
+    width: 200px;
+    height: 200px;
+    top: 10%;
+    left: 20%;
+}
+
+.spot:nth-child(2) {
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 10%;
+}
+
+.spot:nth-child(3) {
+    width: 250px;
+    height: 250px;
+    top: 30%;
+    right: 15%;
+}
+
+
+     /* Лява част с удобства */
+     .left {
+        color: #f0e7df;
+        width: 40%;
+        text-align: center;
+       font-family: "Merriweather", serif;
+       letter-spacing: 1px;
+    }
+
+    .left h2 {
+        font-size: 25px;
+        margin-bottom: 20px;
+        font-family: "Rubik Moonrocks", sans-serif;
+    }
+
+    .left ul {
+        list-style-type:none;
+        padding: 0;
+    }
+
+    .left ul li {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* Дясна част със снимки */
+    .right-images {
+        width: 50%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .right-images img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        animation: fade 12s infinite;
+    }
+
+    /* Ключови кадри за анимацията */
+    @keyframes fade {
+        0%, 100% {
+            opacity: 0;
+        }
+        20%, 40% {
+            opacity: 1;
+        }
+    }
+
+    /* Задаване на последователност за всяко изображение */
+    .right-images img:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .right-images img:nth-child(2) {
+        animation-delay: 4s;
+    }
+
+    .right-images img:nth-child(3) {
+        animation-delay: 8s;
+    }
+
+
+
+    .location {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f0f4f8;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    /* Заглавие H2 */
+    .location h2 {
+        font-size: 60px;
+        font-weight: bold;
+        margin-bottom: 20px; 
+        color: #3c2a21;
+        font-family: "Rubik Moonrocks", sans-serif;
+        margin-bottom: 80px;
+        letter-spacing: 2px;
+
+    }
+
+    /* Стил за Google Maps iframe */
+    .location iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+
+.activity-section{
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            margin-top: 30px;
+            background-color: #29452f;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+}
+.activity-section h2{
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #f0e7df;
+    font-family: "Rubik Moonrocks", sans-serif;
+}
+
+.activity-grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 колони по ширина */
+    gap: 20px;
+}
+
+.image-activity{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-activity img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.image-activity p{
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #f0e7df;
+    font-family: "Merriweather", serif;
+    letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+    .activity-grid {
+        grid-template-columns: 1fr; /* Всичко да бъде на един ред */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 1.1em;
+}
+
+footer h2 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    color: #3c2a21;
+    font-family: "Rubik Moonrocks", sans-serif;
+    letter-spacing: 1px;
+}
+
+footer img {
+    max-width: 100px;
+    margin: 10px 0;
+    color: #3c2a21;
+}
+
+footer .contact-info {
+    margin: 10px 0;
+    font-family: "Merriweather", serif;
+    color: #3c2a21;
+    letter-spacing: 1px;
+}
+
+footer .contact-info h3{
+    color: #3c2a21;
+    font-family: "Rubik Moonrocks", sans-serif;
+}
+
+
+footer a.email,
+footer a.phone {
+    font-family: "Merriweather", serif;
+    text-decoration: none;
+    border-bottom: #e8ac21;
+    color: #e8ac21; /* може да промениш цвета на подчертаването */
+}
+
+.leaf4{
+   
+    font-size: 3rem; /* Размер на иконката */
+    color: #e8ac21; /* Оранжев цвят */
+    transform: rotate(20deg); /* Наклоняване */
+}
+
+footer .social-links {
+    margin-top: 20px;
+}
+
+footer .social-links a {
+    margin: 0 15px;
+    font-size: 1em;
+    color: #3c2a21;
+    text-decoration: none;
+    font-family: "Merriweather", serif;
+}
+footer .social-links i {
+    color: #e8ac21; 
+}
+
+footer .social-links a:hover {
+    color: #e8ac21; /* цветът при задържане на курсора */
+}
+
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 40px;
+    background-color: #463329;
+    color: #e8ac21;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    display: none; /* Първоначално стрелката е скрита */
+    transition: background-color 0.3s ease;
+}
+
+.scroll-to-top:hover {
+    background-color: #3c2a21; /* Променяме цвета при ховър */
+}
+
+/* Символ за стрелка */
+.scroll-to-top::before {
+    content: ''; /* Символ на стрелка */
+    font-size: 25px;
+}
